@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "e5e927b0-887a-486c-a2dd-ce79c7f229d3",
+		"name": "Manager Routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5524809"
+	},
+	"item": [
+		{
+			"name": "localhost:3500/auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\": \"emp1\",\r\n    \"password\": \"emp1\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySW5mbyI6eyJsb2dpbiI6ImVtcDEiLCJyb2xlIjoxMDAyfSwiaWF0IjoxNjU4OTU0NTQxLCJleHAiOjE2NTg5NTQ1NzF9.gNVopbA2GDvTdldlxQhMiGGlq7MhMGA3BlGlFHNjHfc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3500/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/tasks",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Eat apple\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3500/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3500/tasks",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "localhost:3500/tasks",
+					"host": [
+						"localhost"
+					],
+					"port": "3500",
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
