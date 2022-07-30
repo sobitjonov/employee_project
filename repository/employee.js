@@ -1,9 +1,11 @@
-const db = require('../services/knex')
+const db = require('../db/knex')
 
 
-const getEmployees = async (pLogin) => {
-    const users = await db('users') 
-        .select() 
+const getEmployees = async (sortBy, sortDirection, page, limit) => {
+    const users = await db('users')
+        .orderBy(sortBy, sortDirection)
+        .limit(limit)
+        .offset((page - 1) * limit)  
     return users;
 }
 

@@ -1,4 +1,4 @@
-const db = require('../services/knex')
+const db = require('../db/knex')
 
 const checkUser = async (pLogin) => {
     const user = await db('users')
