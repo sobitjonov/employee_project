@@ -8,7 +8,13 @@ const Roles = require('../config/roles')
 
 
 const getAllEmployees = async (req, res) => {
-    const users = await getEmployeesRepo()
+    const filters = req.query;        
+    const sortColumn = filters.sort || 'created_at'; 
+    const sortDirection = filters.direction || 'desc';
+    const page = filters.page || 1;
+    const limit = filters.limit || 10;
+
+    const users = await getEmployeesRepo(sortColumn, sortDirection, page, limit)
     res.json(users);
 }
 
@@ -78,9 +84,9 @@ const getEmployee = (req, res) => {
 
 
 module.exports = {
-    getAllEmployees,
-    createNewEmployee,
-    updateEmployee,
-    deleteEmployee,
-    getEmployee
+    getAllEmployees: getAllEmployees,
+    createNewEmployee: createNewEmployee,
+    updateEmployee: updateEmployee,
+    deleteEmployee: deleteEmployee,
+    getEmployee, getEmployee
 }
